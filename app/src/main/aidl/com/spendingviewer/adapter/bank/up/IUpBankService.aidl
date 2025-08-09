@@ -8,9 +8,9 @@ import com.spendingviewer.adapter.bank.up.model.TransactionsResponse;
 import com.spendingviewer.adapter.bank.up.model.UpTransactionId;
 
 interface IUpBankService {
-    TransactionsResponse getTransactions(int pageSize, String tag, String status, String since, String until, String category);
     TransactionsResponse getTransactionsPage(String link);
     TransactionResponse getTransaction(in UpTransactionId id);
+    TransactionsResponse getTransactions(int pageSize, String tag, String status, String since, String until, String category);
     CategoriesResponse getCategories();
     UpAccountsResponse getAccounts(int pageSize, String accountType, String ownershipType);
     UpAccountsResponse getAccountsPage(String link);

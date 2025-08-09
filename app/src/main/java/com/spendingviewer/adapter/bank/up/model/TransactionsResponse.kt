@@ -4,6 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class TransactionResponse(
-    val data: UpTransaction
+data class TransactionsResponse(
+    val data: List<UpTransaction>,
+    val links: PaginationLinks
 ) : Parcelable

@@ -1,0 +1,11 @@
+[alias]
+    acp = "!f() { git add -u && git commit -m \"$@\" && git push; }; f"
+	sacp = "!f() { \
+	    SUBMODULE_COMMIT_MSG=\"$@\"; \
+        PARENT_COMMIT_MSG=\"Update submodule: $@\"; \
+        echo \"--- Running 'acp' on all submodules with message $SUBMODULE_COMMIT_MSG ---\"; \
+        git submodule foreach --quiet 'git acp \"${SUBMODULE_COMMIT_MSG}\"' && \
+        echo \"--- Running 'acp' for parent repository with message: '$PARENT_COMMIT_MSG' ---\"; \
+        git acp \"$PARENT_COMMIT_MSG\"; \
+    }; f"
+

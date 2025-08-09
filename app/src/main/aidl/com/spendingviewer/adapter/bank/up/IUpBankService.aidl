@@ -1,17 +1,18 @@
 // IUpBankService.aidl
 package com.spendingviewer.adapter.bank.up;
 
-import com.spendingviewer.adapter.bank.up.model.UpAccountsResponse;
-import com.spendingviewer.adapter.bank.up.model.CategoriesResponse;
-import com.spendingviewer.adapter.bank.up.model.TransactionResponse;
-import com.spendingviewer.adapter.bank.up.model.TransactionsResponse;
+import com.spendingviewer.adapter.bank.up.model.UpAccountsResponseResult;
+import com.spendingviewer.adapter.bank.up.model.CategoriesResponseResult;
+import com.spendingviewer.adapter.bank.up.model.TransactionResponseResult;
+import com.spendingviewer.adapter.bank.up.model.TransactionsResponseResult;
 import com.spendingviewer.adapter.bank.up.model.UpTransactionId;
 
 interface IUpBankService {
-    TransactionsResponse getTransactions(int pageSize, String tag, String status, String since, String until, String category);
-    TransactionResponse getTransaction(in UpTransactionId id);
-    TransactionsResponse getTransactionsPage(String link);
-    CategoriesResponse getCategories();
-    UpAccountsResponse getAccounts(int pageSize, String accountType, String ownershipType);
-    UpAccountsResponse getAccountsPage(String link);
+    TransactionsResponseResult getTransactions(int pageSize, String tag, String status, String since, String until, String category);
+    TransactionsResponseResult getTransactionsPage(String link);
+    TransactionResponseResult getTransaction(in UpTransactionId id);
+    CategoriesResponseResult getCategories();
+    UpAccountsResponseResult getAccounts(int pageSize, String accountType, String ownershipType);
+    UpAccountsResponseResult getAccountsPage(String link);
 }
+
